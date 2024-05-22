@@ -32,7 +32,7 @@ export function YourScore({ score, originalGuess, userPrompt, reset }: Props) {
 
   const handleShareOnTwitter = () => {
     const gameUrl = window.location.href;
-    const tweetText = `I scored ${similarityScore}% on the "Guess the Prompt" game! Can you beat my score? #GuessThePrompt\n\nPlay the game: ${gameUrl}`;
+    const tweetText = `I scored ${similarityScore}% on the "Guess the Prompt" game! Can you beat my score? #GuessThePrompt built with @BuildShipApp\n\nPlay the game: ${gameUrl}`;
     const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
       tweetText
     )}`;
