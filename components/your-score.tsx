@@ -30,6 +30,15 @@ export function YourScore({ score, originalGuess, userPrompt, reset }: Props) {
     setScoreColorClass(newScoreColorClass);
   }, [score]);
 
+  const handleShareOnTwitter = () => {
+    const gameUrl = window.location.href;
+    const tweetText = `I scored ${similarityScore}% on the "Guess the Prompt" game! Can you beat my score? #GuessThePrompt\n\nPlay the game: ${gameUrl}`;
+    const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
+      tweetText
+    )}`;
+    window.open(tweetUrl, "_blank");
+  };
+
   return (
     <div className="p-8">
       <h1 className="text-3xl font-bold text-center mb-3">Guess the prompt</h1>
@@ -84,7 +93,10 @@ export function YourScore({ score, originalGuess, userPrompt, reset }: Props) {
           {similarityScore}%
         </p>
         <div className="flex gap-4">
-          <Button className="bg-blue-500 text-white px-6 py-2 rounded-md">
+          <Button
+            className="bg-blue-500 text-white px-6 py-2 rounded-md"
+            onClick={handleShareOnTwitter}
+          >
             Share on Twitter
           </Button>
           <Button className="bg-gray-300 px-6 py-2 rounded-md" onClick={reset}>
