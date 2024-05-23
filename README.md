@@ -1,4 +1,4 @@
-# Generative Full Stack App - Guess the Game App
+# Generative Full Stack App - Guess the prompt Game App
 
 This demo app showcases how you can generate a full stack app using AI.
 
